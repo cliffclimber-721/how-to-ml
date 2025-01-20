@@ -101,6 +101,7 @@ def test(dataloader, model, loss_fn):
     model.eval()
     test_loss, correct = 0, 0
     # auto grad 비활성화 -> gradient를 트래킹 하지 않아 필요한 메모리가 줄어들고 계산속도가 증가한다
+    # item() 은 숫자값만 추출하게끔 하는 문법
     with torch.no_grad():
         for i, j in dataloader:
             i, j = i.to(device), j.to(device)
