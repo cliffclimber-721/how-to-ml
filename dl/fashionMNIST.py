@@ -118,3 +118,6 @@ for epoch in range(epochs):
     train(train_dataloader, model, loss_fn, optimizer)
     test(test_dataloader, model, loss_fn)
 print("DONE!")
+
+torch.save(model.state_dict(), "mnistmodel.pth")
+print("Saved mnistmodel.pth")
